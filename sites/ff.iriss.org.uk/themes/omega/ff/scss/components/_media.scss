@@ -1,0 +1,64 @@
+// node images
+.node__content {
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+// streaming media => video
+.media-vimeo-video,
+.media-youtube-video {
+	position: relative;
+	overflow: hidden;
+	padding-top: 0;
+	padding-bottom: 56.25%;
+	margin-bottom: 2em;
+	height: 0;
+	
+	.media-vimeo-player,
+	.media-youtube-player {
+		position: absolute;
+		top: 0;
+		left: center;
+		width: 100%;
+		height: 100%;
+	}
+}
+// streaming media => tweaks for soundcloud
+.media-soundcloud-outer-wrapper {
+	background: $testo - rgb(32,32,32);
+	padding: 13px 15px 5px 15px;
+	@include border-radius(3px);
+	
+	iframe {
+		width: 100%;
+	}
+}
+// file uploads
+.field {
+	.field__item {
+		margin: 0.2em 0;
+	}
+}
+// custom icons for file uploads
+img.file-icon,
+.node__content img.file-icon {
+	height: 32px;
+	width: auto;
+	vertical-align: middle;
+	margin-right: .33em;
+}
+
+@include breakpoint($tab, true) {
+	// streaming media => tweaks for soundcloud
+	.media-soundcloud-outer-wrapper {
+		background: none;
+		padding: 0;
+		@include border-radius(none);
+		
+		iframe {
+			height: 166px;
+		}
+	}
+}

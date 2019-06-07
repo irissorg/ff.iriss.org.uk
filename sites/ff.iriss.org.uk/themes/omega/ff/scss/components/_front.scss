@@ -1,0 +1,60 @@
+.front {
+	background: $c-main;
+	
+	.l-main {
+		color: $c-main - rgb(128,128,128);
+		padding-bottom: 1em;
+		
+		a, a:visited, h1 {
+			color: white;
+		}
+		h1 {
+			text-align: center;
+			margin: .8em 0;
+		}
+	}
+	.breadcrumb {
+		display: none;
+	}
+	.l-header-outer {
+		box-shadow: none;
+	}
+	
+	// section links
+	ul#front-sec-links {
+		padding-left: 0;
+		
+		li {
+			text-transform: uppercase;
+			font-size: .75em;
+			letter-spacing: .1em;
+			line-height: 1.333em;
+			padding-top: 1.5em;
+			margin-bottom: 2em;
+			text-align: center;
+			overflow: hidden;
+			
+			h2 {
+				font: 3em/0.666 $cursive;
+				text-transform: lowercase;
+				letter-spacing: 0;
+				margin: 0;
+			}
+			img {
+				margin-bottom: 2em;
+				@include transition-property(all);
+				@include transition-duration(0.3s);
+					
+				&:hover,
+				&:focus {
+					@include scale(1.2,1.2);
+				}
+			}
+			a {
+				&:hover, &:focus {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

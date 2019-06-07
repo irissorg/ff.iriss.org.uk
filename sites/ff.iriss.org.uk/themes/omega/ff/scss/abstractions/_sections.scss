@@ -1,0 +1,58 @@
+// define key color for each section
+@mixin ff-background() {
+	background-color: $c-main;
+	
+	.section-steps & {
+		background-color: $c-steps;
+	}
+	.section-walk & {
+		background-color: $c-walk;
+	}
+	.section-run &,
+	.page-node-139 &,
+	.page-node-140 &,
+	.page-node-141 & {
+		background-color: $c-run;
+	}
+	.section-fly & {
+		background-color: $c-fly;
+	}
+}
+@mixin ff-color() {
+	color: $c-main;
+	
+	.section-steps & {
+		color: $c-steps;
+	}
+	.section-walk & {
+		color: $c-walk;
+	}
+	.section-run &,
+	.page-node-139 &,
+	.page-node-140 &,
+	.page-node-141 & {
+		color: $c-run;
+	}
+	.section-fly & {
+		color: $c-fly;
+	}
+}
+@mixin ff-border() {
+	border-color: $c-main;
+	
+	.section-steps & {
+		border-color: $c-steps;
+	}
+	.section-walk & {
+		border-color: $c-walk;
+	}
+	.section-run &,
+	.page-node-139 &,
+	.page-node-140 &,
+	.page-node-141 & {
+		border-color: $c-run;
+	}
+	.section-fly & {
+		border-color: $c-fly;
+	}
+}

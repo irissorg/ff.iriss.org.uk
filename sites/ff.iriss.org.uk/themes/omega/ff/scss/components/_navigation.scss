@@ -1,0 +1,246 @@
+// Drupal admin tabs
+ul.tabs--primary {
+	font-size: 18px;
+	margin: 1.5em 0;
+	padding: 0;
+	border: 1px solid $grigio - rgb(8,8,8);
+	background-color: white;
+	
+	li { 
+		margin-right: 0; 
+	
+		a {
+			display: inline-block;
+			margin: 0;
+			padding: 0 24px;
+			height: 38px;
+			line-height: 38px;
+			border: none;
+			background-color: transparent;
+			text-decoration: none;
+			@include ff-color;
+			
+			&:focus, &:hover {
+				color: white;
+				margin: -1px 0;
+				height: 40px;
+				line-height: 40px;
+				@include ff-background;
+			}
+		}
+		&.active a {
+			background: $grigio - rgb(8,8,8) !important; 
+			color: $testo; 
+			font-weight: normal;
+			
+			&:focus, &:hover {
+				margin: 0;
+				height: 38px;
+				line-height: 38px;
+			}
+		}
+	}
+}
+.front { // tweaks for front page
+	ul.tabs--primary {
+		background: transparent;
+		
+		li {
+			
+			a {
+				&:focus, &:hover {
+					background: $testo;
+				}
+			}
+			&.active a {
+				background: $testo !important;
+			}
+		}
+	}
+}
+
+// mobile main nav - mini menu bar
+.mean-container {
+	
+	.mean-bar {
+		padding: 0;
+		margin: 0;
+		min-height: 46px;
+		z-index: 595;
+		width: 100%;
+		margin-right: -53px;
+		background: rgba(255,255,255,0.1);
+		@include box-shadow(rgba(0,0,0,0.5) 0px 0px 2px);
+		
+		a.meanmenu-reveal {
+			@extend .iconfont;
+			font-size: 18px;
+			text-indent: 0;
+			text-align: center;
+		}
+	}
+	.mean-nav {
+		margin-top: 46px;
+				
+		ul {
+			li {
+				box-sizing: border-box;
+				
+				a {
+					border-top: 1px solid rgba(255,255,255,0.5);
+					padding-top: .75em;
+					padding-bottom: .75em;
+					
+					.link_suf {
+						display: none;
+					}
+					
+					&.mean-expand {
+						@extend .iconfont;
+						line-height: 24px;
+						height: 24px;
+					}
+				}
+				&.mean-last {
+					border-bottom: 1px solid rgba(255,255,255,0.5);
+				}
+			}
+		}
+	}
+	.menu {
+		.leaf {
+			list-style: none;
+		}
+	}
+	#nav-about { 
+		background: $c-main; 
+	}
+	#nav-steps { 
+		background: $c-steps; 
+	}
+	#nav-walk { 
+		background: $c-walk; 
+	}
+	#nav-run { 
+		background: $c-run; 
+	}
+	#nav-fly { 
+		background: $c-fly; 
+	}
+}
+
+@include breakpoint($tab, true) {
+	#block-system-main-menu {
+		display: table;
+		border-collapse: separate;
+		border-spacing: 0;
+		margin: 30px 0 0;
+		width: 100%;
+	
+		.menu {
+			padding: 0;
+			display: table-row;
+			
+			li {
+				list-style: none;
+				display: table-cell;
+				padding-right: 10px;
+				
+				a {
+					text-decoration: none;
+					color: white;
+					padding-top: 66px;
+					display: block;
+					@include transition-property(opacity);
+					@include transition-duration(0.3s);
+					
+					&:hover,
+					&:focus {
+						opacity: 0.8;
+					}
+					
+					&.active {
+						color: white;
+					}
+					.link_txt {
+						display: block;
+						font: 1.4em/0.666 $cursive;
+						text-transform: lowercase;
+					}
+					.link_suf {
+						display: block;
+						text-transform: uppercase;
+						font-size: .45em;
+						letter-spacing: .1em;
+						line-height: 1.333em;
+						margin-top: 1em;
+					}
+				}
+				
+				&#nav-about a {
+					background: url(../images/icons/nav-about.svg) 0 0 no-repeat;
+					background-size: 51px 51px;
+					
+					.no-svg & {
+						background-image: url(../images/icons/nav-about.png);
+					}
+				}
+				&#nav-steps a {
+					background: url(../images/icons/nav-steps.svg) 0 4px no-repeat;
+					background-size: 51px 51px;
+					
+					.no-svg & {
+						background-image: url(../images/icons/nav-steps.png);
+					}
+				}
+				&#nav-walk a {
+					background: url(../images/icons/nav-walk.svg) 0 0 no-repeat;
+					background-size: 51px 51px;
+					
+					.no-svg & {
+						background-image: url(../images/icons/nav-walk.png);
+					}
+				}
+				&#nav-run a {
+					background: url(../images/icons/nav-run.svg) 0 0 no-repeat;
+					background-size: 68px 51px;
+					
+					.no-svg & {
+						background-image: url(../images/icons/nav-run.png);
+					}
+				}
+				&#nav-fly a {
+					background: url(../images/icons/nav-fly.svg) 0 0 no-repeat;
+					background-size: 51px 51px;
+					
+					.no-svg & {
+						background-image: url(../images/icons/nav-fly.png);
+					}
+				}
+				&.last {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+}
+@include breakpoint($desk, true) {
+	#block-system-main-menu {
+	
+		.menu {
+			
+			li {
+				
+				a {
+					
+					.link_txt {
+						font-size: 1.666em;
+					}
+					.link_suf {
+						font-size: .58em;
+					}
+				}
+			}
+		}
+	}
+}

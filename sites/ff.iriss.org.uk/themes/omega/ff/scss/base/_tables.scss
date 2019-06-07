@@ -1,0 +1,25 @@
+table {
+	margin: 1.5em 0;
+	//border-top: 1px solid $grigio-scuro;
+}
+td {
+	padding: .5em;
+	border-bottom: 1px solid $grigio-scuro;
+	background: none;
+	vertical-align: top;
+	font-size: .86em;
+}
+th {
+	@extend td;
+	font-weight: bold;
+	vertical-align: bottom;
+	border-bottom-width: 4px;
+	font-size: 1em;
+}
+caption {
+    caption-side: bottom;
+    text-align: left;
+    font-size: .86em;
+    padding: .5em 0;
+    color: $testo-chiaro;
+}

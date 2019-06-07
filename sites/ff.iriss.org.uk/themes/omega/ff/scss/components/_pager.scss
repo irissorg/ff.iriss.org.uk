@@ -1,0 +1,94 @@
+.pager-wrapper {
+	position: relative;
+	clear: both;
+	margin: 2em 0;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid $grigio - rgb(24,24,24);
+	overflow: hidden;
+}
+.pager {
+	border: none;
+	background: none;
+	margin: 0;
+	
+	li {
+		margin: 0;
+		padding: 0 .25em;
+		border: none;
+		list-style: none;
+		display: inline;
+		line-height: 50px;
+		font-size: .86em;
+		font-weight: bold;
+		
+		&.pager-ellipsis {
+				line-height: 32px;
+				padding-left: 9px;
+				padding-right: 9px;
+		}
+		a:link,
+		a:visited {
+			text-decoration: none;
+			color: $testo-chiaro;
+
+		}
+		a:hover,
+		a:focus,
+		&.pager-current {
+			background: none;
+			@include ff-color;
+		}
+		&.pager-previous,
+		&.pager-next {
+			font-size: 1em;
+			
+			a {
+				@extend .iconfont;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				border-right: 1px solid $grigio - rgb(24,24,24);
+				text-align: center;
+				line-height: 50px;
+				font-size: 1em;
+				height: 50px;
+				width: 55px;
+				
+				&:hover,
+				&:focus {
+					color: white;
+					@include ff-background;
+				}
+			}
+		}
+		&.pager-next a {
+			left: auto;
+			right: 0;
+			border-right: none;
+			border-left: 1px solid $grigio - rgb(24,24,24);
+		}
+	}
+}
+@include breakpoint($tab, true) {
+	.pager {
+		li {
+			padding: 0 .5em;
+		}
+	}
+}
+@include breakpoint($landscape, true) {
+	.pager {
+		li {
+			padding: 0 .66em;
+		}
+	}
+}
+@include breakpoint($desk, true) {
+	.pager {
+		li {
+			padding: 0 .75em;
+		}
+	}
+}

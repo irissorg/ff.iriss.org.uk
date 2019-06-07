@@ -1,0 +1,122 @@
+// styles for the 'fly' page only
+.page-fly {
+	
+	.view-fly {
+		
+		.views-row {
+			border-top: 4px solid $grigio;
+			border-color: rgba(0,0,0,0.035);
+			margin-top: 1em;
+			padding: 1em 0;
+			
+			&.views-row-first {
+				border: none;
+				padding-top: 4px;
+			}
+		}
+		h2 {
+			font: 400 2em/1.1 $cursive;
+			margin-bottom: 0.2em;
+			
+			&:before {
+				content: '“';
+				position: absolute;
+				top: 0;
+				left: -0.5em;
+				font: 700 4em/1 $cursive;
+				color: $c-fly;
+				display: none;
+			}
+		}
+		.mybutton {
+			
+			a {
+				font-weight: bold;
+				margin-top: .5em;
+				display: inline-block;
+			}
+		}
+		.attribution {
+			font-weight: 300;
+			text-transform: uppercase;
+			font-size: .86em;
+			letter-spacing: .03em;
+			line-height: 1.333em;
+			display: block;
+			margin: 2.2em 0 0.5em 0;
+		}
+		.fly-aside {
+			margin: 1.5em 0 0 0;
+			padding: 20px;
+			background: white;
+			background: rgba(255,255,255,0.9);
+			@include box-shadow(0 1px 30px rgba($testo-chiaro,0.1));
+			
+			h2 {
+				font: bold 1em/1 $sans;
+				margin-top: 0;
+				text-transform: uppercase;
+				letter-spacing: 0.03em;
+				
+				&:before {
+					content: '';
+				}
+			}
+		}
+	}
+}
+
+@include breakpoint($tab) {
+	.page-fly {
+		
+		.view-fly {
+			
+			.views-row {
+				padding: 1em 5em 2em;
+				margin: 0;
+				
+				&.views-row-first {
+					padding-top: 1em;
+				}
+			}
+			.views-row-3 {
+				background: url(../images/backgrounds/bird-sings-1.svg) no-repeat 100% 10px;
+				background-size: 170px 170px;
+				padding-right: 11em !important;
+			}
+			.views-row-6 {
+				background: url(../images/backgrounds/bird-table.svg) no-repeat 100% 10px;
+				background-size: 170px 255px;
+				padding-right: 11em !important;
+			}
+			.views-row-9 {
+				background: url(../images/backgrounds/bird-sings-2.svg) no-repeat 0 0;
+				background-size: 170px 170px;
+				padding-left: 16em !important;
+			}
+			h2 {
+				position: relative;
+				
+				&:before {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+@include breakpoint($desk) {
+	.page-fly {
+		
+		.view-fly {
+			
+			.views-row {
+				padding-left: 10em;
+				padding-right: 10em;
+			}
+			.fly-aside {
+				padding: 30px 40px 20px 40px;
+			}
+		}
+	}
+}

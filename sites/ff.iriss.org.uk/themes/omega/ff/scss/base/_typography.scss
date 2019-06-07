@@ -1,0 +1,132 @@
+// Icon font
+@font-face {
+	font-family: 'pilotlight';
+	src:url('../fonts/pilotlight.eot?22gcnj');
+	src:url('../fonts/pilotlight.eot?#iefix22gcnj') format('embedded-opentype'),
+		url('../fonts/pilotlight.woff?22gcnj') format('woff'),
+		url('../fonts/pilotlight.ttf?22gcnj') format('truetype'),
+		url('../fonts/pilotlight.svg?22gcnj#pilotlight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+// For @extend use only 
+.iconfont {
+	font-family: 'pilotlight';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Base HTML
+body,html {
+	font-size: $baseline;
+	line-height: 1.5em;
+	font-family: $sans;
+	background-color: $grigio-chiaro;
+	color: $testo;
+}
+:focus 				{outline:none;}
+::-moz-focus-inner	{border:0;}
+a, button {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+a, a:visited {
+	text-decoration: none;
+	@include ff-color();
+}
+a:hover, a:focus, a:active {
+	text-decoration: underline;
+}
+a.active {
+	text-decoration: underline;
+}
+h3, h4, h5, h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 3em;
+	letter-spacing: -0.03em;
+	line-height: .9em;
+	margin-bottom: .526em;
+	@include ff-color();
+	
+	.page-taxonomy & {
+		text-transform: capitalize;
+	}
+}
+h2 {
+	font-size: 1.5em;
+	line-height: 1.1em;
+}
+h2.block__title {
+	font-size: 1.25em;
+}
+blockquote {
+	font-style: italic;
+	font-weight: 300;
+	margin: 2em;
+	
+	em {
+		font-style: normal;
+	}
+	strong {
+		font-weight: 600;
+	}
+}
+hr {
+	border: none;
+	height: 4px;
+	width: 60px;
+	background: $grigio-scuro;
+	text-align: left;
+	margin: 2em 0;
+}
+
+// system
+.messages {
+	font-size: .75em;
+}
+// abstract field
+.field--name-field-abstract {
+	font-style: italic;
+	
+	.not-front & {
+		font-size: 1.1em;
+		line-height: 1.4em;
+		margin: 1.9em 0;
+		color: $testo-chiaro;
+	}
+}
+
+@include breakpoint($tab, true) {
+	body {
+		font-size: $baseline + 1px;
+	}
+	.l-region--sidebar-second {
+		padding-top: 4em;
+		font-size: .9em;
+	}
+}
+@include breakpoint($landscape, true) {
+	body {
+		font-size: $baseline + 2px;
+	}
+	blockquote {
+		margin: 2em 3em;
+	}
+}
+@include breakpoint($desk, true) {
+	body {
+		font-size: $baseline + 3px;
+	}
+	/*h1 {
+		font-size: 4em;
+	}*/
+}

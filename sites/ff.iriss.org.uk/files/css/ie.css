@@ -1,0 +1,16 @@
+/* Styles for IE 8 and under */
+.l-header #block-views-exp-search-page-page .views-exposed-form .views-exposed-widgets input.form-submit {
+  background: transparent url(../images/ie/submit-ie.png) 0 0 no-repeat;
+  border: none;
+  line-height: 40px;
+  color: #94c4e8; }
+  .section-steps .l-header #block-views-exp-search-page-page .views-exposed-form .views-exposed-widgets input.form-submit {
+    color: #c03e3e; }
+  .section-walk .l-header #block-views-exp-search-page-page .views-exposed-form .views-exposed-widgets input.form-submit {
+    color: #afc66d; }
+  .section-run .l-header #block-views-exp-search-page-page .views-exposed-form .views-exposed-widgets input.form-submit, .page-node-139 .l-header #block-views-exp-search-page-page .views-exposed-form .views-exposed-widgets input.form-submit, .page-node-140 .l-header #block-views-exp-search-page-page .views-exposed-form .views-exposed-widgets input.form-submit, .page-node-141 .l-header #block-views-exp-search-page-page .views-exposed-form .views-exposed-widgets input.form-submit {
+    color: #7d527e; }
+  .section-fly .l-header #block-views-exp-search-page-page .views-exposed-form .views-exposed-widgets input.form-submit {
+    color: #57a5a6; }
+  .l-header #block-views-exp-search-page-page .views-exposed-form .views-exposed-widgets input.form-submit:hover {
+    background-color: transparent; }

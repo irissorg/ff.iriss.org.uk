@@ -1,0 +1,82 @@
+.form-submit {
+    background: transparent;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: .03em;
+    padding: 14px 21px;
+    margin: 1em 0;
+    border: 3px solid;
+	@include ff-border;
+	@include ff-color;
+    @include transition (all 0.5s ease);
+    
+    &:hover {
+	    color: white;
+	    @include ff-background;
+	    @include transition (all 0.5s ease);
+	}
+}
+form label {
+	font-size: .75em;
+	font-weight: bold;
+}
+
+// site contact form
+.contact-form {
+	padding-bottom: 1em;
+
+	label {
+	    display: block;
+	    margin: 0px 0px 5px;
+	    
+	    &>span {
+		    font-weight: bold;
+		    @include ff-color;
+		}
+	}
+	input[type="text"], 
+	input[type="email"], 
+	textarea {
+	    border: 1px solid $grigio-scuro;
+	    color: $testo;
+	    outline: 0 none;
+	    padding: 6px 12px;
+	    margin: 0 0 8px 0;
+	    width: 100%;
+	    font-weight: normal;
+	    font-size: 14px;
+	    line-height: 15px;
+	    @include border-radius(4px);
+	    @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+	    
+	    &:focus {
+		    @include ff-border;
+		    @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px rgba($c-main, 0.33));
+	    }
+	}
+	textarea {
+	    height: 120px;
+	    margin-bottom: 0;
+	    @include border-radius(4px 4px 0 0);
+	}
+}
+
+@include breakpoint($tab, true) {
+	.contact-form {
+		padding-bottom: 0;
+	
+		input[type="text"], 
+		input[type="email"] {
+			width: 75%;
+		}
+	}
+}
+@include breakpoint($desk, true) {
+	.contact-form {	
+		input[type="text"], 
+		input[type="email"] {
+			width: 66.666%;
+		}
+	}
+}

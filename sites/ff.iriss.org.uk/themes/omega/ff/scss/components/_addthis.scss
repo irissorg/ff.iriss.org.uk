@@ -1,0 +1,93 @@
+.l-social-outer {
+	background: white;
+	border-top: 1px solid $grigio - rgb(8,8,8);
+	bottom: -51px;
+	@include transition-property(bottom);
+	@include transition-duration(.33s);
+	
+	&.fixed {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		opacity: 0.98;
+		z-index: 499;
+		
+		.l-social {
+			padding: 0;
+		}
+	}
+}
+// make space at page bottom for fixed social region
+.l-legal-outer.socialfixed {
+	padding-bottom: 50px;
+}
+
+.addthis_toolbox {
+	@extend .iconfont;
+	position: relative;
+	font-size: 16px;
+	
+	a, a:visited {
+		text-decoration: none;
+		display: inline-block;
+		text-align: center;
+		width: 50px !important;
+		height: 50px;
+		line-height: 50px;
+		border-left: 1px solid $grigio - rgb(8,8,8);
+		color: $testo-chiaro;
+		background-color: white;
+		
+		&.last, &#toTop {
+			border-right: 1px solid $grigio - rgb(8,8,8);
+		}
+		
+		&#toTop {
+			display: none;
+			position: absolute;
+			top: 0;
+			right: 9999px;
+			width: 150px;
+		}
+		
+		&:hover,
+		&:focus,
+		&:active {
+			color: white;
+			@include ff-background;
+		}
+	}
+}
+.atm-i {
+	a:hover,
+	a:focus,
+	a:active {
+		background: none;
+	}
+}
+
+@include breakpoint($tab, true) {
+	.addthis_toolbox {
+		
+		a {
+			
+			&#toTop {
+				right: 0;
+			}
+		}
+	}
+}
+
+@include breakpoint($desk, true) {
+	.l-social-outer {
+		
+		&.fixed {
+			
+			.l-social {
+				padding-left: 0.3125em;
+				padding-right: 0.3125em;
+			}
+		}
+	}
+}

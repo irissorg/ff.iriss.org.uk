@@ -1,0 +1,160 @@
+$breakpoint-no-queries: true;
+$breakpoint-no-query-fallbacks: true;
+
+// Selectively import only what we need
+@import "breakpoint";
+@import "compass";
+@import "abstractions/**/*";
+@import "variables/**/*";
+@import "base/_typography.scss";
+
+// Hide entirely
+#toolbar,
+.media-vimeo-video,
+.media-youtube-video,
+.media-soundcloud-outer-wrapper,
+.block--disqus,
+.killswitch-label,
+#block-views-exp-search-page-page,
+#block-system-main-menu,
+.breadcrumb,
+.field--name-field-tags,
+.captcha,
+.tabs.tabs--primary,
+.l-footer-outer,
+.l-social-outer,
+#block-menu-menu-legal,
+#block-block-2,
+.pic {
+	display: none !important;
+}
+
+// General print tweaks
+@page { // support for this still seems spotty
+	margin: 2.6cm;
+}
+body,html {
+	font-size: 14pt;
+	padding: 0;
+	color: black;
+}
+h1, h2, h3, h4, h5, h6 {
+   page-break-after: avoid;
+}
+h1 {
+	font-size: 2.75em;
+	line-height: 1em;
+}
+hr {
+	border: 3px solid $grigio;
+	height: auto;
+	width: 10%;
+	background: none;
+}
+a, a:visited {
+	text-decoration: underline;
+}
+a[href^=http]:after { 
+	content: " (" attr(href) ") ";
+	font-style: italic;
+	font-weight: normal;
+}
+a[href^="#"] {
+	text-decoration: none;
+	
+	&:after {
+		content: "";
+	}
+}
+#main-content {
+	&:after { 
+		content: "";
+	}
+}
+.file-icon {
+	width: 1.5em;
+	height: auto;
+	margin-right: .5em;
+}
+.l-legal {
+	font-size: .66em;
+	margin-top: 3em;
+}
+.aside {
+	border: 2px solid $grigio;
+	padding: 1em 1.5em;
+	font-size: .75em;
+	line-height: 1.5em;
+	@include border-radius(9pt);
+}
+
+// Branding
+.l-header-outer {
+		
+	.l-header {
+		
+		.l-branding {
+			margin: 0 0 95px 0;
+			padding: 0;
+			width: 100%;
+			text-align: left;
+			overflow: visible;
+			
+			.site-logo {
+				width: 256px;
+				height: 100px;
+				
+				img {
+					display: none;
+				}
+				/*&:after { 
+					content: url(../images/identity/logo-ff-print.png);
+					display: inline-block;
+					font-size: 0;
+					line-height: 0;
+					width: 256px;
+					height: 100px;
+				}*/
+			}
+		}
+	}
+}
+
+// front
+ul#front-sec-links {
+	li {
+		img {
+			display: none;
+		}
+		h2 {
+			margin: 0;
+		}
+		p {
+			margin-top: 0;
+		}
+	}
+}
+
+// Fly page
+.page-fly {
+	
+	.view-fly {
+		
+		.mybutton,
+		.views-field-title h2 {
+			display: none;
+		}
+		.views-row {
+			border-top: 4pt solid $grigio;
+			margin-top: 1em;
+			padding: 1em 0;
+		}
+		.attribution {
+			font-weight: 300;
+			text-transform: uppercase;
+			font-size: .86em;
+			letter-spacing: .03em;
+			line-height: 1.333em;
+		}
+	}
+}

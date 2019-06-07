@@ -1,0 +1,61 @@
+// in-node tweaks
+.node-readmore {
+	a {
+		text-decoration: none;
+		font-weight: bold;
+		font-size: .86em;
+		
+		&:after {
+			content: '…';
+		}
+	}
+}
+.node {
+
+	&.node-teaser {
+		margin-bottom: 2em;
+		
+		h2 {
+			margin-bottom: 0;
+
+			a {
+				text-decoration: none;
+			}
+		}
+		.field.field--name-body {
+			margin: .5em 0;
+		}
+		&:last-of-type {
+			
+			hr {
+				display: none;
+			}
+		}
+	}
+}
+.l-content {
+	
+	.block {
+		border-top: 4px solid $grigio;
+		margin-top: 2em;
+		padding-top: 1em;
+	}
+}
+.aside {
+	background: $grigio;
+	padding: 20px;
+	font-size: .86em;
+	@include border-radius(12px);
+}
+@include breakpoint($tab) {
+	.aside {
+		padding-left: 130px;
+		background: $grigio url(../images/icons/aside.png) 25px 25px no-repeat;
+		min-height: 130px;
+		
+		.svg & {
+			background-image: url(../images/icons/aside.svg);
+			background-size: 80px 80px;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+$breakpoint-no-queries: true;
+$breakpoint-no-query-fallbacks: true;
+
+// Re-import everything from pilotlight-basic.layout.scss but without media queries.
+@import "ff-basic.layout";
+
+.l-page {
+	min-width: 905px;
+}

@@ -1,0 +1,33 @@
+.hidden {
+	display: none;
+}
+.align-left {
+	float: left;
+	margin-right: 20px;
+	margin-bottom: .5em;
+}
+.align-right {
+	float: right;
+	margin-left: 20px;
+	margin-bottom: .5em;
+}
+
+@include breakpoint($tab, true) {
+	.picker {
+		display: table;
+		border-spacing: 15px 0;
+		margin: 1.5em -15px;	
+			
+		ul {
+			display: table-row;
+			
+			li {
+				display: table-cell;
+				background: $grigio;
+				padding: 20px 20px 25px 20px;
+				@include border-radius(12px);
+				width: 33.333%;
+			}
+		}
+	}
+}

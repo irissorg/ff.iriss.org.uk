@@ -1,0 +1,22 @@
+// colors
+
+// neutrals
+$grigio:		rgb(242,242,242);
+$grigio-scuro:	$grigio - rgb(32,32,32);
+$grigio-chiaro:	rgb(250,250,250);
+$testo:			rgb(85, 85, 85);
+$testo-chiaro:	$testo + rgb(64,64,64);
+
+// material ui
+$azzurro:		rgb(148,196,232);
+$viola: 		rgb(125,82,126);
+$rosso:			rgb(192,62,62);
+$verde:			rgb(175,198,109);
+$ciano:			rgb(87,165,166);
+
+// section colors
+$c-main: 		$azzurro;
+$c-steps: 		$rosso;
+$c-walk: 		$verde;
+$c-run: 		$viola;
+$c-fly: 		$ciano;

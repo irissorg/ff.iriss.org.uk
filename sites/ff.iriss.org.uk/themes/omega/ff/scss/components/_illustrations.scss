@@ -1,0 +1,128 @@
+// styles for non-background illustrations
+
+.killswitch-label {
+	display: none;
+}
+// hide all but the full-width pics from mobile
+.pic {
+	display: none;
+	width: 100%;
+	height: 0;
+	position: relative;
+	
+	&.pic-full-3sq {
+		display: block;
+		padding-top: 33.333%;
+		width: 100%;
+	}
+	svg, img { // img for IE8 only
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	}
+}
+
+@include breakpoint($tab, true) {
+	
+	.l-header {
+		position: relative;
+	}
+	
+	// killswitch
+	.killswitch-label {
+		display: block;
+		position: absolute;
+		bottom: -56px;
+		right: 0.625rem;
+		z-index: 299;
+		color: $testo-chiaro;
+		font-size: 11px;
+		line-height: 20px;
+		cursor: pointer;
+	}
+	.killswitch-cb {
+		display: none;
+	}
+	.killswitch-mark {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 8px;
+		width: 18px;
+		height: 18px;
+		border: 1px solid $testo-chiaro;
+		@include border-radius(12px);
+		opacity: 1;
+		
+		&:before {
+			content: '';
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -4px 0 0 -5px;
+			height: 5px;
+			width: 10px;
+			border: solid $testo-chiaro;
+			border-width: 0 0 2px 2px;
+			@include transform(rotate(-45deg));
+		}
+			
+		.killswitch-cb:checked ~ & {
+			opacity: .5;
+			
+			&:before { 
+				display: block; 
+			}
+		}
+	}
+		
+	.killswitch-desc {
+		font-weight: 300;
+		letter-spacing: .03em;
+		color: $testo-chiaro;
+		opacity: 1;
+		
+		.killswitch-cb:checked ~ & {
+			opacity: .5;
+		}
+	}
+	
+	// illustrations
+	
+	$colwidth: 33.333%;
+	
+	.pic {
+		display: block;
+	    width: $colwidth;
+	    padding-top: $colwidth;
+	    
+		&.pic-1x1 {
+			padding-top: $colwidth;
+		}
+		&.pic-1x2 {
+			padding-top: $colwidth * 2;
+		}
+		&.pic-3x2 {
+			padding-top: $colwidth * 0.666;
+		}
+		&.pic-2x3 {
+			padding-top: $colwidth * 1.5;
+		}
+		&.pic-4x3 {
+			padding-top: $colwidth * 0.75;
+		}
+		&.pic-3x4 {
+			padding-top: $colwidth * 1.333;
+		}
+		&.pic-5x3 {
+			padding-top: $colwidth * 0.6;
+		}
+		&.pic-full-3sq {
+			padding-top: 33.333%;
+			width: 100%;
+		}
+	}
+}

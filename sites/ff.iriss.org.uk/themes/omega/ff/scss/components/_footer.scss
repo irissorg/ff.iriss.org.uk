@@ -1,0 +1,140 @@
+// outer wrappers
+.l-footer-outer {
+	background: white;
+	border-top: 1px solid $grigio - rgb(8,8,8);
+}
+.l-legal-outer {
+	@extend .l-footer-outer;
+}
+
+// footer region
+.l-footer {
+	
+	.block {
+		font-size: .75em;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		
+		h2 {
+			border: none;
+			padding-bottom: 0;
+			margin-bottom: 1em;
+		}
+		
+		p {
+			margin: .5em 0;
+			line-height: 1.5em;
+		}
+	}
+}
+
+// legal region
+.l-legal {
+	font: .6875em/1.2 'helvetica neue',helvetica,arial,sans-serif;
+	padding: 1em 0;
+	color: $testo-chiaro;
+	
+	.menu {
+		padding-left: 0;
+		margin: 1em 0;
+		
+		li {
+			text-transform: none;
+			font-size: 1em;
+			border-right: 1px solid silver;
+			padding-right: .75em;
+			margin-right: .6em;
+			width: auto;
+			display: inline;
+			
+			&.leaf {
+				list-style: none;
+			}
+			&.last {
+				border-right: none;
+				padding-right: 0;
+				margin-right: 0;
+			}
+		}
+	}
+	
+	.logo_iriss {
+		display: block;
+		height: 60px;
+		width: 140px;
+		background: url(../images/identity/logo_iriss.png) 0 0 no-repeat;
+		text-indent: -9999px;
+	}
+	.svg & .logo_iriss {
+		background-image: url(../images/identity/logo_iriss.svg);
+	}
+}
+
+@include breakpoint($tab, true) {
+	// width of footer blocks
+	$block-width: 46%;
+	
+	// footer
+	.l-footer {
+		
+		// centered vertical line
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAKCAMAAABCDMR4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTk4RTU1ODM1NzgyMTFFNDgwMzg4Njk3NjY2QzgwNDEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTk4RTU1ODQ1NzgyMTFFNDgwMzg4Njk3NjY2QzgwNDEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBOThFNTU4MTU3ODIxMUU0ODAzODg2OTc2NjZDODA0MSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBOThFNTU4MjU3ODIxMUU0ODAzODg2OTc2NjZDODA0MSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoJuUGYAAAAGUExURerq6gAAAMke/wkAAAAOSURBVHjaYmDABAABBgAAFAABaEkyYwAAAABJRU5ErkJggg==);
+		background-repeat: repeat-y;
+		background-position: center top;
+		
+		.block {
+			float: left;
+			width: $block-width;
+			padding-top: 1.5em;
+			padding-bottom: 2em;
+			
+			&#block-block-8 {
+				margin-right: 100% - ($block-width * 2);
+			}
+		}
+	}
+	
+	// legal
+	.l-legal {
+		padding-top: 3em;
+		padding-bottom: 3em;
+		
+		.l-region--legal {
+			position: relative;
+		}
+		#block-block-1 {
+			width: auto;
+			float: left;
+		}
+		.menu {
+			margin: 0;
+			padding-left: 2em;
+			float: left;
+			
+			li {
+				line-height: 1.2em; 
+			}
+		}
+		// Iriss logo block
+		#block-block-2 {
+			position: absolute;
+			right: 0;
+			top: -1.75em;
+			z-index: 399;
+			width: auto;
+			height: auto;
+			
+			p {
+				margin: 0;
+			}
+			.logo_iriss {
+				margin-top: 0;
+			}
+		}
+	}
+}
+@include breakpoint($desk, true) {
+	.l-legal {
+		font-size: .6em;
+	}
+}

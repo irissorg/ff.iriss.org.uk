@@ -1,0 +1,28 @@
+/* Styles for IE 8 and under */
+
+@import "variables/**/*";
+@import "abstractions/**/*";
+
+// keep search button pretty
+.l-header {
+		
+	#block-views-exp-search-page-page {
+		
+		.views-exposed-form {
+			
+			.views-exposed-widgets {
+
+				input.form-submit {
+					background: transparent url(../images/ie/submit-ie.png) 0 0 no-repeat;
+					border: none;
+					line-height: 40px;
+					@include ff-color();
+					
+					&:hover {
+					    background-color: transparent;
+				    }
+				}
+			}
+		}
+	}
+}

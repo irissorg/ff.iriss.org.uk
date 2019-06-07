@@ -1,0 +1,44 @@
+// responsive views grid (views column class)
+// See also the 'components/view-grids' partial for more specific styling stuff
+@import "susyone";
+
+.view ul {
+	padding-left: 0;
+}
+.view li {
+	
+	&.grid-2,
+	&.grid-3 {
+		list-style: none;
+	}
+}
+li.grid-4 { // front only
+	list-style: none;
+}
+
+@include breakpoint($tab, true) {
+	
+	// tab & desk 2
+	.view li.grid-2 {
+		@include span-columns(6, 12);
+	}
+	.view li.grid-2.omega {
+		@include span-columns(6 omega , 12);
+	}
+	
+	// tab & desk 3
+	.view li.grid-3 {
+		@include span-columns(4, 12);
+	}
+	.view li.grid-3.omega {
+		@include span-columns(4 omega , 12);
+	}
+	
+	// tab & desk 4
+	li.grid-4 {
+		@include span-columns(3, 12);
+	}
+	li.grid-4.omega {
+		@include span-columns(3 omega , 12);
+	}
+}

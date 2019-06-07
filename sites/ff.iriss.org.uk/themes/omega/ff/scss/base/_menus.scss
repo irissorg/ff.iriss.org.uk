@@ -1,0 +1,11 @@
+.menu {
+	.leaf {
+		
+		&.active {
+			a {
+				text-decoration: none;
+				color: $testo;
+			}
+		}
+	}
+}

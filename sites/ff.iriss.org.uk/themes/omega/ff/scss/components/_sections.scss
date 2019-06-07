@@ -1,0 +1,88 @@
+// panels
+.view-steps-walk-run {
+	li {
+		background: white;
+		background: rgba(255,255,255,0.9);
+		padding: 1px 1em 1em 120px;
+		margin-bottom: 1em;
+		color: $testo;
+		position: relative;
+		@include box-shadow(0 1px 2px rgba(0,0,0,0.1));
+		
+		.description {
+			z-index: 199;
+			position: relative;
+			font-size: 0.86em;
+			line-height: 1.5em;
+			
+			h2 {
+				font-weight: bold;
+				font-size: 1.33em;
+				line-height: 1.1em;
+				margin-bottom: .25em;
+			}
+		}
+		img {
+			position: absolute;
+			top: 1em;
+			left: 0;
+			z-index: 99;
+			height: 130px;
+			width: auto;
+		}
+	}
+}
+
+@include breakpoint($tab, true) {
+	
+	// panels
+	.view-steps-walk-run {
+		li {
+			min-height: 230px;
+			overflow: hidden;
+			padding: 0;
+			border-bottom: 20px solid transparent;
+			
+			.description {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				padding-right: 1em;
+				font-size: .75em
+				
+				h2 {
+					
+				}
+				
+			}
+			img {
+				position: static;
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+@include breakpoint($desk, true) {
+	
+	// panels
+	.view-steps-walk-run {
+		li {
+			.description {
+				font-size: .86em;
+				
+				h2 {
+					font-size: 1.4em;
+				}
+			}
+			.ff-type {
+				padding: 10px 20px;
+			}
+		}
+	}
+	
+	// fly parallaxisms
+	.page-fly 			{ @include ff-parallax('fly'); }
+	.page-fly .l-page	{ @include ff-parallax('fly-2'); }
+}

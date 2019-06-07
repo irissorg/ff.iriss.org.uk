@@ -1,0 +1,38 @@
+// breadcrumbs
+.breadcrumb {
+	margin: 1.5em 0 3em 0;
+	padding-left: 0;
+	list-style: none;
+	font-size: .6em;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	color: $testo-chiaro;
+	
+	.active {
+		color: silver;
+	}
+	
+	li {
+		padding-right: 0.4em;
+		display: inline;
+		
+		&:after {
+			content: "»";
+			padding-left: 0.4em;
+			vertical-align: baseline;
+		}
+		&:last-child:after {
+			content: "";
+		}
+	}
+	
+	a {
+		text-decoration: none;
+	}
+}
+
+@include breakpoint($tab, true) {
+	.breadcrumb {
+
+	}
+}
